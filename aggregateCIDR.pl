@@ -34,6 +34,8 @@ while (<>) {
 
     $line =~ s/^\s*(.*?)\s*$/$1/;
 
+    next if $line eq '';
+
     if ($spf) {
         $line =~ s/^ip[46]://;
     }
@@ -49,11 +51,11 @@ while (<>) {
     } elsif( $line =~ m/:/ ) {
         eval {$cidr6->add_any($line)};
         if ($@) {
-            if (!$quiet) { print "# Ignoring IPv6: $line\n"; }
+            if (!$quiet) { print STDERR "# Ignoring IPv6: $line\n"; }
         }
 
     } else {
-        if (!$quiet) { print "# Ignoring: $line\n"; }
+        if (!$quiet) { print STDERR"# Ignoring: $line\n"; }
     }
 }
 
