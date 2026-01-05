@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 # Source: https://github.com/lquidfire/route-summarization
+# based on: https://github.com/nabbi/route-summarization
 # based on original from http://adrianpopagh.blogspot.com/2008/03/route-summarization-script.html
 
 use strict;
@@ -8,10 +9,10 @@ use Net::CIDR::Lite;
 use Getopt::Long;
 
 GetOptions(
-    'spf'   => \my $spf,
-    'quiet' => \my $quiet,
+    's|spf'   => \my $spf,
+    'q|quiet' => \my $quiet,
     'help'  => \my $help
-);
+) or die "Error in command line arguments\n";
 
 if ($help) {
     print "usage: $0\n";
@@ -36,8 +37,10 @@ while (<>) {
 
     $line =~ s/^\s*(.*?)\s*$/$1/;
 
+    next if $line eq '';
+
     if ($spf) {
-        $line =~ s/^ip[4,6]://;
+        $line =~ s/^ip[46]://;
     }
 
     if( $line =~ m/^(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\.(\d\d?\d?)\/(\d\d?)$/ &&
@@ -51,11 +54,11 @@ while (<>) {
     } elsif( $line =~ m/:/ ) {
         eval {$cidr6->add_any($line)};
         if ($@) {
-            if (!$quiet) { print "# Ignoring IPv6: $line\n"; }
+            if (!$quiet) { print STDERR "# Ignoring IPv6: $line\n"; }
         }
 
     } else {
-        if (!$quiet) { print "# Ignoring: $line\n"; }
+        if (!$quiet) { print STDERR"# Ignoring: $line\n"; }
     }
 }
 
