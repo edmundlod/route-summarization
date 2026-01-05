@@ -83,7 +83,7 @@ Because this tool consumes input exclusively from STDIN, it embeds cleanly into 
 
 ### Projects using or compatible with this tool
 
-* **Postallow** — (https://codeberg.org/peregrinus13/postallow)[https://codeberg.org/peregrinus13/postallow]
+* **Postallow** — [https://codeberg.org/peregrinus13/postallow](https://codeberg.org/peregrinus13/postallow)
 * **Postwhite Fork** — [https://github.com/nabbi/postwhite](https://github.com/nabbi/postwhite)
 * **TCL IPSet** — [https://github.com/nabbi/tcl-ipset](https://github.com/nabbi/tcl-ipset)
 
