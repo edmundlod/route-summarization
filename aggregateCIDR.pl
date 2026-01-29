@@ -63,7 +63,7 @@ my @cidr4_list = $cidr4->list;
 my @cidr6_list = $cidr6->list;
 if (!$quiet) { print "# Aggregated IP list:\n"; }
 foreach my $item4(@cidr4_list){
-    $item4 =~ s/\/32//;
+    $item4 =~ s/\/32$//;
     if ($spf) { print "ip4:"; }
     print "$item4\n";
 }
