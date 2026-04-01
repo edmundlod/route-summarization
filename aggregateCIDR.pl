@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-# Source: https://github.com/lquidfire/route-summarization
+# Source: https://github.com/edmundlod/route-summarization
 # based on: https://github.com/nabbi/route-summarization
 # based on original from http://adrianpopagh.blogspot.com/2008/03/route-summarization-script.html
 

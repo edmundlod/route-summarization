@@ -1,0 +1,16 @@
+Source: route-summarization
+Section: net
+Priority: optional
+Maintainer: Edmund Lodewijks <edmund@proteamail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Homepage: https://github.com/edmundlod/route-summarization
+Rules-Requires-Root: no
+
+Package: route-summarization
+Architecture: all
+Depends: ${misc:Depends}, perl, libnet-cidr-lite-perl
+Description: IP route summarization and CIDR aggregation tool
+ Reads IPv4 and IPv6 networks one per line from stdin and outputs a
+ summarized, aggregated list of CIDR blocks. Supports an optional --spf
+ mode for parsing SPF prefix notation, as used by postallow.
