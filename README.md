@@ -89,6 +89,25 @@ Because this tool consumes input exclusively from STDIN, it embeds cleanly into 
 
 ---
 
+## Installation
+
+### Debian / Ubuntu (recommended)
+
+```bash
+sudo mkdir -p /usr/share/keyrings
+curl -fsSL https://edmundlod.github.io/apt/key.asc \
+  | sudo tee /usr/share/keyrings/edmundlod-apt.asc > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/edmundlod-apt.asc] \
+https://edmundlod.github.io/apt trixie main" \
+  | sudo tee /etc/apt/sources.list.d/edmundlod.list
+sudo apt update
+sudo apt install route-summarization
+```
+
+### Manual
+
+Copy `aggregateCIDR.pl` to a directory on your `$PATH` (e.g. `/usr/local/bin`).
+
 ## Requirements
 
 * Perl 5
