@@ -28,10 +28,10 @@ else
     fail=1
 fi
 
-# Test 3: IPv6 host address without prefix is accepted
+# Test 3: IPv6 host address without prefix is accepted, /128 stripped from output
 out=$(echo "2001:db8::1" | perl "$SCRIPT" --quiet 2>/dev/null)
-if [ "$out" = "2001:db8::1/128" ]; then
-    echo "PASS: bare IPv6 host address accepted as /128"
+if [ "$out" = "2001:db8::1" ]; then
+    echo "PASS: bare IPv6 host address accepted, /128 stripped"
 else
     echo "FAIL: bare IPv6 host address, got: $out"
     fail=1

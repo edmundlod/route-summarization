@@ -71,6 +71,7 @@ foreach my $item4(@cidr4_list){
     print "$item4\n";
 }
 foreach my $item6(@cidr6_list){
+    $item6 =~ s/\/128$//;
     if ($spf) { print "ip6:"; }
     print "$item6\n";
 }
