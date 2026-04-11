@@ -1,4 +1,4 @@
-%{!?pkg_version: %global pkg_version 0.3}
+%{!?pkg_version: %global pkg_version 0.3.1}
 
 Name:           route-summarization
 Version:        %{pkg_version}
@@ -32,5 +32,5 @@ install -D -m 755 aggregateCIDR.pl %{buildroot}%{_bindir}/aggregateCIDR.pl
 %{_bindir}/aggregateCIDR.pl
 
 %changelog
-* Sat Apr 11 2026 Edmund Lodewijks <edmund@proteamail.com> - 0.3-1
+* Sat Apr 11 2026 Edmund Lodewijks <edmund@proteamail.com> - 0.3.1-1
 - Initial RPM packaging

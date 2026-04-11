@@ -1,3 +1,9 @@
+route-summarization (0.3.1-1) trixie; urgency=low
+
+  * Add RPM spec file and build workflow for AlmaLinux 10.
+
+ -- Edmund Lodewijks <edmund@proteamail.com>  Sat, 11 Apr 2026 00:00:00 +0000
+
 route-summarization (0.3-1) trixie; urgency=low
 
   * Strip /128 from IPv6 host output for consistency with IPv4 /32 handling.
