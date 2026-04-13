@@ -6,7 +6,7 @@ Release:        1%{?dist}
 Summary:        IP route summarization and CIDR aggregation tool
 License:        BSD-3-Clause
 URL:            https://github.com/edmundlod/route-summarization
-Source0:        %{name}-%{version}.tar.gz
+Source0:        https://github.com/edmundlod/route-summarization/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
 BuildArch:      noarch
 
 Requires:       perl(Net::CIDR::Lite)
