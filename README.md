@@ -114,7 +114,13 @@ Copy `aggregateCIDR.pl` to a directory on your `$PATH` (e.g. `/usr/local/bin`).
 * `Net::CIDR::Lite` module
 * `Getopt::Long` (core Perl)
 
-Install module via CPAN:
+If using Debian, install the module via aptitude:
+
+```bash
+sudo apt install libnet-cidr-lite-perl
+```
+
+Otherwise, install the module via CPAN:
 
 ```bash
 cpan install Net::CIDR::Lite
